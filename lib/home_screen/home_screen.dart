@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           const Text(
             'Expense Distribution Chart',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
           ),
           SizedBox(
             height: 200,
@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
           const Center(
             child: Text(
               'Expense List',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
           ),
           const SizedBox(height: 10),
@@ -81,7 +81,11 @@ class HomeScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final expense = expenses[index];
               return ListTile(
-                title: Text(expense?.title! ?? ''),
+                title: Text(
+                  expense?.title! ?? '',
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.w400),
+                ),
                 subtitle: Text(
                     'Category: ${expense?.category}\nAmount: \$${expense?.amount!.toStringAsFixed(2)}'),
               );
